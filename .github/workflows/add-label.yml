@@ -12,7 +12,7 @@ jobs:
       - run: npm install @actions/core @actions/github
         shell: bash
 
-      - run: node ./.github/workflows/add-label/index.js
+      - run: node ./.github/workflows/add-label.js
         shell: bash
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
