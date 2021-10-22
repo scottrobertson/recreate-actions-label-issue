@@ -1,0 +1,16 @@
+name: "Auto Label PR"
+description: "Automatically label a PR"
+runs:
+  using: "composite"
+  steps:
+    - uses: actions/setup-node@v1
+      with:
+        node-version: 12
+
+    - run: npm install @actions/core @actions/github
+      shell: bash
+
+    - run: node ./.github/workflows/add-label/index.js
+      shell: bash
+      env:
+        GITHUB_TOKEN: ${{ inputs.token }}
