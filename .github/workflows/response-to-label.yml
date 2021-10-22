@@ -1,0 +1,11 @@
+name: Labelled
+on:
+  pull_request:
+    types: [labeled]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo 'here'
+        shell: bash

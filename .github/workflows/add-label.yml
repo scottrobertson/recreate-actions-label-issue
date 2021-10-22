@@ -5,6 +5,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
         with:
           node-version: 12
@@ -12,7 +13,7 @@ jobs:
       - run: npm install @actions/core @actions/github
         shell: bash
 
-      - run: node ./.github/workflows/add-label/index.js
+      - run: node ./.github/workflows/add-label.js
         shell: bash
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
